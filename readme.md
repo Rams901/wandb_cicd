@@ -1,3 +1,3 @@
 # wandb-cicd
 
-Tools needed for cicd in ml
+Tools needed for CI/CD in ML
