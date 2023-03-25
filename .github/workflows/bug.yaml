@@ -1,7 +1,6 @@
 name: label-bug
 on:
   issue_comment
-    types: [created, deleted]
 
 jobs:
   label-bug:
