@@ -11,3 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "hello"
+# Adding protection is necessary to make sure the status must pass before merging to a branch

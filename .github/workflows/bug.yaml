@@ -1,0 +1,11 @@
+name: label-bug
+on:
+  issue_comment
+    types: [created]
+
+jobs:
+  label-bug:
+    runs-on: ubuntu-latest
+    steps:
+      - run: | 
+        echo ${{ github.event.issue.comment }}
