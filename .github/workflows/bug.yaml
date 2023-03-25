@@ -6,5 +6,4 @@ jobs:
   label-bug:
     runs-on: ubuntu-latest
     steps:
-      - run: | 
-          echo "${{ github.event.issue.comment }} "
+      - run: echo "${{ github.event.issue.comment }} "
