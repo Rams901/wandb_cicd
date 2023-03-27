@@ -24,7 +24,7 @@ jobs:
       shell: python
       run: |
         import os
-        run_id = od.environ['PR_COMMENT'].replace('/wandb', '')
+        run_id = os.environ['PR_COMMENT'].replace('/wandb', '')
         print(run_id)
               
       env:
