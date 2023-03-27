@@ -7,8 +7,10 @@ permissions:
 
 jobs:
   ghapi-exercise:
-    if: (github.event.issue.pull_request != null) && contains(github.event.comment.body, '/bug')
+  
+    if: (github.event.issue.pull_request != null) && contains(github.event.comment.body, '/wandb')
     runs-on: ubuntu-latest
+
     steps:        
     - name: install dependencies
       run: pip install ghapi 
@@ -22,11 +24,8 @@ jobs:
       shell: python
       run: |
         import os
-        from ghapi.core import GhApi
-        owner,repo = os.environ['REPO'].split('/')
-        api = GhApi(owner=owner, repo=repo)
-        api.issues.add_labels(issue_number=os.environ['NUMBER'], labels=['bug'])
+        run_id = od.environ['PR_COMMENT'].replace('/wandb', '')
+        print(run_id)
+              
       env:
-        NUMBER: ${{ github.event.issue.number }} 
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        REPO: ${{ github.repository }}
+        PR_COMMENT: ${{ github.event.comment.body }}
